@@ -92,6 +92,9 @@ def account():
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
+            old_picture = current_user.image_file
+            if old_picture != 'default.jpg':
+                os.remove(os.path.join(app.root_path, 'static/profile_pics', old_picture))
             current_user.image_file = picture_file
 
         current_user.username = form.username.data

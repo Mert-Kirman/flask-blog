@@ -196,3 +196,8 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+# Ignore all profile pictures in the static directory
+# but not the default one
+flaskblog/static/profile_pics/*
+!flaskblog/static/profile_pics/default.jpg
